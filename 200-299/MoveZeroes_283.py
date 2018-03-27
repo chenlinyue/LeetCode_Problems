@@ -13,3 +13,9 @@ class Solution(object):
             else:
                 i += 1
         nums += [0] * count   # extend nums with correct number of 0
+        
+        
+'''
+there is a one line solution from Discuss and it's:
+nums.sort(key = lamda k: 1 k == 0 else 0)
+'''
