@@ -25,3 +25,6 @@ class Solution(object):
             left = self.robMost(node.left)
             right = self.robMost(node.right)
             return (left[1] + right[1], max(left[0] + right[0] + node.val, left[1] + right[1]))
+    '''
+    by record biggest and withoutNode, we actually turn the solution into a greedy one
+    '''
