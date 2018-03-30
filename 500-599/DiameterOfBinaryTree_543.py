@@ -6,22 +6,23 @@
 #         self.right = None
 
 class Solution(object):
+    '''
+    the previous solution is has some repeat operation
+    in this case cut the repetition and make the time complexity to O(n)
+    '''
+    
     def diameterOfBinaryTree(self, root):
         """
-        traverse the tree and find the answer of the case the the treenode is in the path
-        the longest diameter will be the greatest depth from left plus the greatesr depth from right
+        :type root: TreeNode
+        :rtype: int
         """
-        if root:
-            mD = max(self.diameterOfBinaryTree(root.left), 
-                     self.diameterOfBinaryTree(root.right), 
-                     self.getDep(root.left) + self.getDep(root.right))
-            return mD
-        else:
-            return 0
-    
-    
-    def getDep(self, node):
-            if not node:
-                return 0
+        self.ans = 0
+        def depth(node):
+            if node:
+                left, right = depth(node.left), depth(node.right)
+                self.ans = max(self.ans, left + right)
+                return max(left, right) + 1
             else:
-                return max(self.getDep(node.left), self.getDep(node.right)) + 1
+                return 0
+        depth(root)
+        return self.ans
