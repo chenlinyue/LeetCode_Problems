@@ -30,5 +30,5 @@ public String convert(String s, int numRows) {
 }
 
 /* At first I used String[] instead of StringBuffer[] to store lines of chars, lead to a very high consumption of memory, 
-because the length of String can not be changes, and each we use += to update it, actually a whole new String is created.
+because the length of String can not be changes. So every time we use += to update it, a whole new String is created.
 */
