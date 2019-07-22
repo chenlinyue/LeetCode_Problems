@@ -29,6 +29,9 @@ public String convert(String s, int numRows) {
     return lines[0].toString();
 }
 
-/* At first I used String[] instead of StringBuffer[] to store lines of chars, lead to a very high consumption of memory, 
-because the length of String can not be changes. So every time we use += to update it, a whole new String is created.
+/*
+At first, I used String[] instead of StringBuffer[], and this lead to a very high consumption of memory. The reason is that
+the length of String cannot be changed, so everytime I use += to update it, the real action is that another new String is
+created. But if we use StringBuffer and StringBuffer.append(), this problem is solved. But remember converting StringBuffer
+to String (StringBuffer.toString()) in the end.
 */
