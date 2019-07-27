@@ -9,6 +9,9 @@ public List<Integer> topKFrequent(int[] nums, int k) {
     }
 
     List<Integer>[] posFre = new List[len + 1];
+    /* Be careful about the lenth of posFre. Note that the frequency is going to start at 1 while the
+    starting index of an array is 0. So we need to set the length of posFre to len + 1 instead of len.
+    */
 
     for (int key : fre.keySet()){
         int frequency = fre.get(key);
